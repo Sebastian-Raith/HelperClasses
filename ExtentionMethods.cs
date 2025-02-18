@@ -4,7 +4,8 @@ namespace BackendRaith
 {
     public static class ExtentionMethods
     {
-        public static T CopyPropertiesFrom<T>(this T target, object source, string[]? ignoreProperties = null)
+        public static T CopyPropertiesFrom<T>(this T target, object source) => CopyPropertiesFrom<T>(target, source, null);
+        public static T CopyPropertiesFrom<T>(this T target, object source, string[]? ignoreProperties)
         {
             if (target == null) return target;
             ignoreProperties ??= Array.Empty<string>();
